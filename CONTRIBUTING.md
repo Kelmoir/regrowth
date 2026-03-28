@@ -34,7 +34,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/regrowth/regrowth.git
+git clone git@github.com:Kelmoir/regrowth.git
 cd regrowth
 ```
 
@@ -98,7 +98,7 @@ Regrowth uses specialized development agents to maintain code quality:
 #### 1. Pick a Task or Propose a Feature
 
 **Option A: Work on an existing issue**
-- Find an issue in the [backlog](https://github.com/regrowth/regrowth/issues)
+- Find an issue in the [backlog](https://github.com/Kelmoir/regrowth/issues)
 - Comment that you're interested in working on it
 - Maintainers will assign it to you
 
@@ -469,7 +469,7 @@ We appreciate your patience!
 
 If you find a bug:
 
-1. Check [existing issues](https://github.com/regrowth/regrowth/issues) to avoid duplicates
+1. Check [existing issues](https://github.com/Kelmoir/regrowth/issues) to avoid duplicates
 2. Open a new issue with:
    - **Title**: Clear bug description
    - **Steps to reproduce**: Exact steps to trigger the bug

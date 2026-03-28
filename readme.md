@@ -288,7 +288,7 @@ We welcome contributions from ecologists, game developers, permaculture practiti
 
 **How to Get Involved**:
 1. Check [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines
-2. Review [open issues](https://github.com/regrowth/regrowth/issues) for tasks
+2. Review [open issues](https://github.com/Kelmoir/regrowth/issues) for tasks
 3. Propose new features or scenarios via GitHub discussions
 
 **Areas of Need**:
@@ -306,7 +306,7 @@ We welcome contributions from ecologists, game developers, permaculture practiti
 
 **Clone & Build**:
 ```bash
-git clone https://github.com/regrowth/regrowth.git
+git clone git@github.com:Kelmoir/regrowth.git
 cd regrowth
 cargo build --release
 cargo run
@@ -350,7 +350,7 @@ A: Complex enough to be scientifically interesting but simple enough to remain p
 A: Both! Each scenario has a narrative frame, but you're free to tackle them in any order. Multiple playthroughs encourage different strategies.
 
 **Q: Will there be multiplayer?**
-A: No
+A: Not in initial release, but it's a planned stretch goal for cooperative restoration.
 
 **Q: How long are scenarios?**
 A: Roughly 30 minutes to 2 hours depending on difficulty and player style.
@@ -376,6 +376,8 @@ This project is licensed under the [MIT License](./LICENSE).
 - Permaculture practitioners and educators who provided design input
 - Indie game communities for inspiration and feedback
 - Open-source Rust ecosystem contributors
+
+**GitHub**: [github.com/Kelmoir/regrowth](https://github.com/Kelmoir/regrowth)
 
 ---
 
