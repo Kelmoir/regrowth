@@ -1,0 +1,119 @@
+# Rust / Cargo
+/target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.vim/
+*.code-workspace
+
+# VS Code specific
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-snippets
+*.vsix
+
+# JetBrains IDEs
+.idea/
+*.ipr
+*.iml
+*.iws
+*.iex
+.gradle/
+
+# Build artifacts
+/build/
+/dist/
+*.exe
+*.dll
+*.dylib
+*.so
+*.a
+
+# Debugging
+debug
+.lldb
+
+# Test & coverage
+/coverage/
+*.profraw
+*.profdata
+tarpaulin-report.html
+cobertura.xml
+
+# Benchmarking
+/target/benches/
+bench-results/
+*.bench
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.directory
+*.directory
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Game development specific
+# Save files
+/saves/
+*.sav
+*.save
+*.slot
+
+# Logs
+/logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Generated files (docs, etc.)
+/doc/
+*.generated.rs
+
+# Local development config
+.env
+.env.local
+.env.*.local
+
+# Node modules (if using npm/yarn for build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Project-specific ignores
+/assets/generated/
+/config/local/
