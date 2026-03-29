@@ -82,6 +82,7 @@ This project focuses on simulating natural systems (soil components, water, life
 2. **Design First**: For complex tasks, outline the module structure and interfaces before writing code
 3. **Implement**: Write code following the standards above, with full documentation
 4. **Build & Verify**: Run `cargo build` to ensure compilation and catch errors early
+5. **Clippy check**: Run `cargo clippy` to catch idiomatic issues and improve code quality, fix issues that have been found and that can be fixed without changing the intended design or architecture
 5. **Suggest & Justify**: If crates or architectural changes are needed, explain the rationale for planner approval
 6. **Complete & Report**: Summarize what was implemented, where files are located, and any outstanding considerations
 
