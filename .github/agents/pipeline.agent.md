@@ -113,9 +113,6 @@ You are the orchestrator of the development workflow for the regrowth game proje
    - Wait for test report and coverage metrics (90%+ required)
    - If issues: Return to Coder Stage (Step 3)
    - If approved: Core pipeline complete
-6. **Mark as done**:
-   - Invoke planner to update `project.md` or the selected github issue to mark task as completed
-   - User commits changes with appropriate message
 
 ### Extended Pipeline (Optional)
 After core pipeline completes, optionally continue:
