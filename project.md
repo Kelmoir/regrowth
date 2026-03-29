@@ -6,6 +6,13 @@ Regrowth is a gamified ecological simulation where players restore degraded land
 
 > For per-task descriptions, success criteria, prerequisites, and dependency details, see [task_details.md](task_details.md).
 
+## Technical Notes
+
+**Grid Integration & Compiler Warnings:**
+- Grid algorithms (neighbors, ring_at, field_of_view) and measurement constants are currently marked with `#[allow(dead_code)]` during pre-integration
+- These warnings should be removed in task **02_03** when character pathfinding is integrated and grid systems are wired into the main game loop
+- See src/grid/algorithms.rs and src/grid/coordinates.rs for marked functions
+
 ## Tasks
 
 ### Phase 1: Foundations (Weeks 1-2)

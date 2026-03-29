@@ -14,6 +14,7 @@ use std::fmt;
 
 /// Hexagon size measurement constants.
 /// Represents a 5cm hexagon tile (flat-top orientation).
+#[allow(dead_code)]
 pub mod measurements {
     /// Size of a single hexagon tile in centimeters.
     pub const HEX_SIZE_CM: f32 = 5.0;
@@ -40,6 +41,7 @@ pub mod measurements {
 
 /// Direction vectors in axial coordinates (col, row).
 /// The 6 cardinal directions for hexagonal grids.
+#[allow(dead_code)]
 pub mod directions {
     use super::AxialCoord;
 

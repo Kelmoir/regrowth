@@ -1,42 +1,6 @@
 use bevy::prelude::*;
-
-/// Hexagonal position using axial coordinates
-#[derive(Component, Reflect, Copy, Clone, Debug, Eq, PartialEq, Hash, Default)]
-pub struct HexPos {
-    pub q: i32,
-    pub r: i32,
-}
-
-impl HexPos {
-    pub fn new(q: i32, r: i32) -> Self {
-        Self { q, r }
-    }
-
-    /// Derived axial coordinate
-    pub fn s(&self) -> i32 {
-        -self.q - self.r
-    }
-
-    /// Return the 6 neighbors in axial coordinates
-    pub fn neighbors(&self) -> [HexPos; 6] {
-        [
-            HexPos { q: self.q + 1, r: self.r },
-            HexPos { q: self.q + 1, r: self.r - 1 },
-            HexPos { q: self.q, r: self.r - 1 },
-            HexPos { q: self.q - 1, r: self.r },
-            HexPos { q: self.q - 1, r: self.r + 1 },
-            HexPos { q: self.q, r: self.r + 1 },
-        ]
-    }
-
-    /// Manhattan distance between two hex positions
-    pub fn distance(&self, other: &HexPos) -> usize {
-        (self.q.abs_diff(other.q) as usize
-            + self.r.abs_diff(other.r) as usize
-            + self.s().abs_diff(other.s()) as usize)
-            / 2
-    }
-}
+#[allow(unused_imports)]
+use crate::grid::coordinates::AxialCoord;
 
 /// Tile component for each hex
 #[derive(Component, Reflect, Debug, Clone)]
@@ -78,6 +42,7 @@ pub enum SoilType {
 
 impl SoilType {
     /// Base infiltration rate (m/s)
+    #[allow(dead_code)]
     pub fn infiltration_rate(&self) -> f32 {
         match self {
             SoilType::Sand => 0.01,
@@ -94,6 +59,97 @@ pub struct Nutrients {
     pub phosphorus: f32,
     pub potassium: f32,
 }
+
+/// Terrain types that determine tile passability and movement costs.
+///
+/// Some terrain types are completely impassable (Water, Fence), while others
+/// are passable. Combined with elevation differences, this determines if a character
+/// can move to or through a tile.
+#[derive(Debug, Clone, Copy, Reflect, Default, PartialEq, Eq)]
+pub enum TerrainType {
+    /// Grassland - easily passable
+    #[default]
+    Grassland,
+    /// Forest - passable but slower movement
+    Forest,
+    /// Mountain - passable but steep, limited movement options
+    Mountain,
+    /// Water - completely impassable
+    Water,
+    /// Fence/barrier - completely impassable
+    Fence,
+    /// Bog/swamp - passable but very slow, consumes stamina
+    Bog,
+    /// Brambles/thorns - passable but damages and slows movement
+    Brambles,
+    /// Rock outcrop - completely impassable
+    Rock,
+}
+
+impl TerrainType {
+    /// Returns true if this terrain type blocks movement entirely.
+    ///
+    /// Impassable terrain cannot be entered by characters.
+    #[allow(dead_code)]
+    pub fn is_impassable(&self) -> bool {
+        matches!(self, TerrainType::Water | TerrainType::Fence | TerrainType::Rock)
+    }
+
+    /// Returns the movement cost multiplier (1.0 = normal, >1.0 = slower).
+    ///
+    /// Used to calculate how much stamina/time it costs to traverse this terrain.
+    #[allow(dead_code)]
+    pub fn movement_cost(&self) -> f32 {
+        match self {
+            TerrainType::Grassland => 1.0,
+            TerrainType::Forest => 1.5,
+            TerrainType::Mountain => 2.0,
+            TerrainType::Bog => 3.0,
+            TerrainType::Brambles => 1.8,
+            // These are impassable so cost is irrelevant, but provide fallback
+            TerrainType::Water | TerrainType::Fence | TerrainType::Rock => f32::INFINITY,
+        }
+    }
+}
+
+/// Terrain component for each hex.
+///
+/// Stores the terrain type and manages passability rules for pathfinding.
+#[derive(Component, Reflect, Debug, Clone, Copy)]
+pub struct Terrain {
+    pub terrain_type: TerrainType,
+}
+
+impl Default for Terrain {
+    fn default() -> Self {
+        Self {
+            terrain_type: TerrainType::Grassland,
+        }
+    }
+}
+
+/// Configuration for movement and pathfinding rules.
+///
+/// This resource defines global passability constraints like maximum elevation
+/// difference allowed when crossing tile borders.
+#[derive(Resource, Debug, Clone, Copy)]
+#[allow(dead_code)]
+pub struct MovementRules {
+    /// Maximum elevation difference in meters to cross between tiles.
+    /// Borders with height differences exceeding this are impassable.
+    /// Typical value: ~2.5 meters (45° slope at 5cm tile size).
+    pub max_crossable_elevation_diff: f32,
+}
+
+impl Default for MovementRules {
+    fn default() -> Self {
+        Self {
+            // At 5cm per tile, 2.5m difference = 45° slope
+            max_crossable_elevation_diff: 2.5,
+        }
+    }
+}
+
 
 /// Water component
 #[derive(Component, Reflect, Debug, Clone)]
