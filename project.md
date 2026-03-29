@@ -10,7 +10,7 @@ Regrowth is a gamified ecological simulation where players restore degraded land
 
 ### Phase 1: Foundations (Weeks 1-2)
 
-- [ ] 01_01 — Hexagonal Grid Generation System
+- [x] 01_01 — Hexagonal Grid Generation System
 - [ ] 01_02 — Bevy Project Setup & Component Architecture
 - [ ] 01_03 — Core Data Structures (Tile, Grid, World State)
 - [ ] 01_04 — Isometric Tile Rendering Pipeline
