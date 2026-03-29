@@ -31,7 +31,6 @@ pub mod coordinates;
 pub mod grid;
 
 // Re-export main types for convenience
-pub use coordinates::{AxialCoord, CubeCoord};
 pub use grid::Grid;
 
 /// Creates a new hexagonal grid with specified dimensions.

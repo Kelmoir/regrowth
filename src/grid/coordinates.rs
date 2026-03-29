@@ -29,7 +29,7 @@ pub mod measurements {
     pub const HEX_OUTER_RADIUS: f32 = HEX_SIZE_CM * CM_TO_GAME_UNIT;
 
     /// Inner radius of hex in game units (distance from center to edge midpoint).
-    pub const HEX_INNER_RADIUS: f32 = HEX_OUTER_RADIUS * 0.866_025_404;
+    pub const HEX_INNER_RADIUS: f32 = HEX_OUTER_RADIUS * 0.866_025_4;
 
     /// Width of flat-top hex in game units.
     pub const HEX_WIDTH: f32 = 2.0 * HEX_OUTER_RADIUS;
@@ -346,9 +346,9 @@ impl CubeCoord {
     /// assert_eq!(a.distance_to(b), 5);
     /// ```
     pub fn distance_to(self, other: CubeCoord) -> usize {
-        ((self.x - other.x).abs() as usize
-            + (self.y - other.y).abs() as usize
-            + (self.z - other.z).abs() as usize)
+        ((self.x - other.x).unsigned_abs() as usize
+            + (self.y - other.y).unsigned_abs() as usize
+            + (self.z - other.z).unsigned_abs() as usize)
             / 2
     }
 
