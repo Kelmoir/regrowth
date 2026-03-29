@@ -1,0 +1,20 @@
+[package]
+name = "regrowth"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.94"
+
+[dependencies]
+bevy = { version = "0.18", features = ["dynamic_linking"] }
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+serde_json = "1.0"
+thiserror = "1.0"
+rand = "0.8"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = true

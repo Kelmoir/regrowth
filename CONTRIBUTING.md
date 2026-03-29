@@ -126,7 +126,7 @@ git checkout -b feature/your-descriptive-name
 
 Follow the [Code Standards](#code-standards) section below. Key points:
 
-- Write **idiomatic Rust** (Rust 2021 edition)
+- Write **idiomatic Rust** (Rust 2021 edition, Bevy 0.18+)
 - Follow **SOLID principles**
 - Document all public modules and functions
 - Use **Python-style naming** (snake_case functions, PascalCase types)
@@ -271,7 +271,7 @@ Then open a PR on GitHub with:
 ### Rust Edition & Version
 
 - **Edition**: 2021
-- **Minimum Supported Rust Version (MSRV)**: 1.70
+- **Minimum Supported Rust Version (MSRV)**: 1.94
 - **Channel**: Stable (not nightly)
 
 ### Naming Conventions

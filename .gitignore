@@ -117,3 +117,8 @@ env/
 # Project-specific ignores
 /assets/generated/
 /config/local/
+
+
+# Added by cargo
+
+/target

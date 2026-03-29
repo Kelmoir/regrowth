@@ -1,7 +1,7 @@
 ---
 name: integrationtester
 description: "Use when: writing integration tests, testing module interactions, validating full game loop scenarios. Manually triggered or after pipeline completion."
-tools: [read, edit, search, execute, vscode_askQuestions]
+tools: [read, edit, search, execute, vscode/askQuestions]
 user-invocable: true
 argument-hint: "Integration test suite for modules/scenarios..."
 ---
