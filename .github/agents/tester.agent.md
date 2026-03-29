@@ -1,7 +1,7 @@
 ---
 name: tester
 description: "Use when: writing and executing unit tests, verifying code coverage, running benchmarks. Part of the pipeline after code review."
-tools: [read, edit, search, execute, vscode_askQuestions]
+tools: [read, edit, search, execute, vscode/askQuestions]
 user-invocable: false
 argument-hint: "Code to test with coverage targets..."
 ---

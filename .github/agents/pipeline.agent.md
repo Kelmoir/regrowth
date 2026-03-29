@@ -1,7 +1,7 @@
 ---
 name: pipeline
 description: "Use when: orchestrating the full development workflow from planning through testing, including integration testing and performance benchmarking. Manages handoffs between planner, coder, reviewer, tester, integration tester, and benchmarker agents."
-tools: []
+tools: [agent]
 user-invocable: true
 agents: [planner, coder, reviewer, tester, integrationtester, benchmarker]
 argument-hint: "High-level project goal or feature to implement..."
