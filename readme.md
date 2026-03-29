@@ -11,6 +11,10 @@
 
 Regrowth is a gamified ecological simulation where you restore degraded land using permaculture techniques, water harvesting, and community labor. Plan interventions, manage workers, observe how soil, water, and life systems naturally regenerate, and accomplish meaningful restoration goals. Every decision impacts the ecosystem—watch bare earth transform into thriving, biodiverse landscapes.
 
+### AI useage
+
+This project is also designed to help me get a grasp on how to effectively chain LLM together, in order to write software, etc. Thus, it will be heavily AI generated, with me providing a design overview and seering the project broadly.
+
 ---
 
 ## Vision & Overview
@@ -99,6 +103,7 @@ The map is a **hexagonal grid** where terrain and subsurface matter equally:
 - **Soil depth**: Tracks layers from surface to bedrock/clay pan
 - **Vertical mixing**: Tillage, burrowing organisms, or water movement can mix layers
 - **Elevation modification**: Terraforming (cutting, filling, building terraces) is labor-intensive but radically changes hydrology
+- **Rocks and clutter**: May cause issues for labor when on/in the soil, but can be hauled off to other project, like checkdams ot other things.
 
 **Resource conservation**: Soil doesn't vanish from the map—dug earth becomes fill elsewhere; eroded soil deposits downslope.
 
@@ -142,6 +147,14 @@ Players construct structures to modify terrain hydrology and create growing cond
 - **Free terraform**: The player can also manually create terraforming operations, based on the terrain and various requirements.
 
 Each structure has **labor costs** and **takes time to construct**, but provides long-term hydrological or fertility effects.
+
+### Teaching
+
+Players will need to aquire some form of understanding of the mechanics, gaining insights that shall be applicable in real life.
+
+- **Enzyclopedia**: Avaiable Plants should be simulated and decribed well in the encyclopedia, With immediate focus on the species required for the scenarios, but with the explicit intent to be expanded on, later. 
+- **Guilds**: Aids in choosing Plants for guilds, based on the various goals. Those shall not be pre-programmed, but will ideally be derived from their propertys.
+- **Overlays**: Various overlays for things like, water/etc, to help the player get deeper insights on ho the things work.
 
 ---
 
@@ -208,6 +221,13 @@ Possible victory conditions include:
 - **Resilience**: Withstand simulated drought or extreme weather without degradation
 - **Resource conservation**: Complete restoration within labor or time budgets
 
+### Free Scenarios
+
+It shall also be possible, to generate own scenarios, with own conditions, ore purely for playing any enyoing the changes.
+The map should be obtainable world wise, possible with the help of free mapping informations, i.e. Google erath, or other tools, that are available. 
+Those Scenarios may even run in a Sandbox setup, where contraints like labor or money for resources can be removed.
+This way, It should be possible to simulate and Plan for a real restoration project with this simulation.
+
 ### Example Scenarios
 
 1. **The Great Green Wall**: Join a community project to combat desertification. Restore degraded savanna through strategic planting and swale networks. Goal: Establish 1000 trees and raise groundwater in 50 in-game years.
@@ -253,8 +273,7 @@ Possible victory conditions include:
 
 ### Future/Stretch Goals (Vision Extensions)
 
-- [ ] Multiplayer cooperative restoration
-- [ ] Workshop/mod support for custom scenarios
+- [ ] Workshop/mod support for custom scenarios, life, and possibly more
 - [ ] Integration with permaculture research datasets
 - [ ] Educational mode with explicit learning objectives
 - [ ] Landscape generation based on real ecological data
